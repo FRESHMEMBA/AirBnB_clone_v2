@@ -16,8 +16,7 @@ class FileStorage:
                 in FileStorage.__objects
                 if cls in key
                 }
-        return {}
-        # return FileStorage.__objects
+        return FileStorage.__objects
 
     def new(self, obj):
         """Adds new object to storage dictionary"""
