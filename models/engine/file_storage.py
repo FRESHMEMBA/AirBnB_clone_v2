@@ -13,7 +13,7 @@ class FileStorage:
         new_dict = {}
         if cls is not None:
             for key, value in FileStorage.__objects.items():
-                if cls is key.split(".")[0]:
+                if cls == key.split(".")[0]:
                     new_dict[key] = value
             return new_dict
         return FileStorage.__objects
