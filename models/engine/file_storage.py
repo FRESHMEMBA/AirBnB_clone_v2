@@ -10,12 +10,12 @@ class FileStorage:
 
     def all(self, cls=None):
         """Returns the list of objects of one type of class"""
-        new_dict = {}
         if cls is not None:
-            for key, value in FileStorage.__objects.items():
-                if cls in key:
-                    new_dict[key] = value
-            return new_dict
+            return {
+                key: value for key, value
+                in FileStorage.__objects
+                if cls in key
+                }
         return FileStorage.__objects
 
     def new(self, obj):
