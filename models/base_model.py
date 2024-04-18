@@ -76,3 +76,5 @@ class BaseModel:
         Deletes the current instance from the storage by calling the method
         delete
         """
+        from models import storage
+        storage.delete(self)
