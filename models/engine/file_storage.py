@@ -16,6 +16,16 @@ class FileStorage:
                 if cls in key
                 }
         return FileStorage.__objects
+    # def all(self, cls=None):
+    #     """Returns the list of objects of one type of class"""
+    #     new_dict = {}
+    #     if cls is not None:
+    #         for key, value in FileStorage.__objects.items():
+    #             if cls in key:
+    #                 new_dict[key] = value
+    #         return new_dict
+    #     return FileStorage.__objects
+
 
     def new(self, obj):
         """Adds new object to storage dictionary"""
@@ -61,3 +71,9 @@ class FileStorage:
         if obj is not None:
             key = f"{type(obj).__name__}.{obj.id}"
             self.__objects.pop(key, None)
+    # def delete(self, obj=None):
+    #     """Deletes an object from __objects if it's inside"""
+    #     if obj is not None:
+    #         key = obj.__class__.__name__ + '.' + obj.id
+    #         if key in self.__objects:
+    #             del self.__objects[key]
