@@ -39,12 +39,15 @@ class DBStorage():
         mysql_database = environ["HBNB_MYSQL_DB"]
 
         # Create engine
-        self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'
-                                      .format(environ['HBNB_MYSQL_USER'],
-                                              environ['HBNB_MYSQL_PWD'],
-                                              environ['HBNB_MYSQL_HOST'],
-                                              environ['HBNB_MYSQL_DB']),
-                                    pool_pre_ping=True)
+        self.__engine = create_engine(
+            'mysql+mysqldb://{}:{}@{}/{}'
+            .format(
+                environ['HBNB_MYSQL_USER'],
+                environ['HBNB_MYSQL_PWD'],
+                environ['HBNB_MYSQL_HOST'],
+                environ['HBNB_MYSQL_DB']
+                ), pool_pre_ping=True
+                )
         if environ.get('HBNB_ENV') == 'test':
             Base.metadata.drop_all(self.__engine)
 
