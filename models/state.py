@@ -3,7 +3,6 @@
 from models.base_model import BaseModel, Base, Column, String
 
 
-
 class State(BaseModel, Base):
     """ State class """
     __tablename__ = "states"
