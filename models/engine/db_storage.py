@@ -44,7 +44,7 @@ class DBStorage():
                                               environ['HBNB_MYSQL_PWD'],
                                               environ['HBNB_MYSQL_HOST'],
                                               environ['HBNB_MYSQL_DB']),
-                                        pool_pre_ping=True)
+                                    pool_pre_ping=True)
         if environ.get('HBNB_ENV') == 'test':
             Base.metadata.drop_all(self.__engine)
 
