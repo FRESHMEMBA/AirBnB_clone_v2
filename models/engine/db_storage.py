@@ -17,7 +17,6 @@ from models.place import Place
 from models.review import Review
 
 
-
 class DBStorage():
     """This class manages database storage of hbnb models"""
     __engine = None
@@ -44,8 +43,10 @@ class DBStorage():
                                       .format(environ['HBNB_MYSQL_USER'],
                                               environ['HBNB_MYSQL_PWD'],
                                               environ['HBNB_MYSQL_HOST'],
-                                              environ['HBNB_MYSQL_DB']),
-                                       pool_pre_ping=True)
+                                              environ['HBNB_MYSQL_DB']
+                                              ),
+                                       pool_pre_ping=True
+                                       )
         if environ.get('HBNB_ENV') == 'test':
             Base.metadata.drop_all(self.__engine)
 
